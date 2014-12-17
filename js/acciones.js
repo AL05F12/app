@@ -5,14 +5,16 @@
 function buscartodos ()
 {
 	//datos a mandar
-	
+	alert("funciobt");
 	$.ajax({
 		type:"POST",
 		url: "http://192.168.1.182/biblioteca/consultalibros.php"		
 	}).done (function(msg){
 		var DatosLibros = JSON.parse(msg);
+		alert(msg);
 		if(DatosLibros.datos == 1)
 		{
+			alert("datos");
 			$('#biblioteca').empty();
 			for(var i=0;i<DatosLibros.libros.length;i++)
 			{
@@ -34,9 +36,9 @@ $(document).ready(function(e){
 $("#javi").height( $("#principal").height() - $("#cab").height() - $("#pie").height() );
 
 	document.addEventListener("deviceready",function(){
-		
+		alert("ready");
 		$('#buscar_todos').tap(function(){
-			
+			alert("dentro");
 			buscartodos();
 			$.mobile.changePage("#listado");
 		});
