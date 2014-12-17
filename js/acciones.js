@@ -33,9 +33,10 @@ function buscartodos ()
 }
 
 $(document).ready(function(e){	
-$("#javi").height( $("#principal").height() - $("#cab").height() - $("#pie").height() );
+
 
 	document.addEventListener("deviceready",function(){
+		$("#javi").height( $("#principal").height() - $("#cab").height() - $("#pie").height() );
 		alert("ready");
 		$('#buscar_todos').tap(function(){
 			alert("dentro");
